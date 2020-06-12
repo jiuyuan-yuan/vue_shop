@@ -3,22 +3,31 @@
     <div class="login_box">
       <!-- 头像区域 -->
       <div class="avatar_box">
-        <img src="../assets/logo.png" alt />
+        <img src="../assets/logo.png"
+             alt />
       </div>
       <!-- 登陆表单区域 -->
-      <el-form ref="loginFormRef" class="login_form" :model="loginForm" :rules="loginFormRules">
+      <el-form ref="loginFormRef"
+               class="login_form"
+               :model="loginForm"
+               :rules="loginFormRules">
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input prefix-icon="iconfont icon-user" v-model="loginForm.username"></el-input>
+          <el-input prefix-icon="iconfont icon-user"
+                    v-model="loginForm.username"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input type="password" prefix-icon="iconfont icon-3702mima" v-model="loginForm.password"></el-input>
+          <el-input type="password"
+                    prefix-icon="iconfont icon-3702mima"
+                    v-model="loginForm.password"></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
-          <el-button type="primary" @click="login">登陆</el-button>
-          <el-button type="info" @click="resetLoginForm">重置</el-button>
+          <el-button type="primary"
+                     @click="login">登陆</el-button>
+          <el-button type="info"
+                     @click="resetLoginForm">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
