@@ -282,8 +282,14 @@ export default {
       this.$refs.addCateFormRef.resetFields()
     },
     // 展示编辑展示对话框
-    showEidtCateName (form) {
-      this.editCateForm = form
+    async showEidtCateName (row) {
+      // console.log(row.cat_id)
+      const { data: res } = await this.$http.get('categories/' + row.cat_id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('查询参数失败')
+      }
+      // console.log(res)
+      this.editCateForm = res.data
       this.editDialogVisible = true
     },
     // 对话框关闭重置表单
@@ -331,14 +337,11 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .tree-table {
   margin-top: 15px;
 }
 .el-cascader {
   width: 100%;
-}
-.el-cascader-menu {
-  height: 300px;
 }
 </style>
